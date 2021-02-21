@@ -1,0 +1,20 @@
+{
+  "name": "octobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc && node ./build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.31",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
