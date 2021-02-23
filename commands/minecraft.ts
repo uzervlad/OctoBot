@@ -6,6 +6,13 @@ export default class MinecraftCommand extends Command {
     name = "Minecraft";
     command = [ "mc", "minecraft" ];
 
+    private players(p: { max: number, online: string[] }): string {
+        if(!p.online.length)
+            return `No one is playing! :(`;
+        else
+            return `Players: ${p.online.length}/${p.max}\n${p.online.map(u => `\`${u}\``).join(', ')}`;
+    }
+
     public async run({ bot, msg, mc }: ICommandArguments) {
         if(mc.online) {
             var embed = new MessageEmbed()
@@ -14,8 +21,8 @@ export default class MinecraftCommand extends Command {
                 .setDescription(cleanString(`**Server online!**
 
                     Version: ${mc.version}
-                    MoTD: ${mc.motd}
-                    Players: ${mc.currentPlayers}/${mc.maxPlayers}
+
+                    ${this.players(mc.players)}
                 `));
                 msg.channel.send(embed);
         } else {

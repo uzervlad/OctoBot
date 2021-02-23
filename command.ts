@@ -1,12 +1,12 @@
 import { Client, Message } from "discord.js";
-import { MinecraftData } from "./mc";
+import IMinecraftServerStatus from "./mc";
 
 export interface ICommandArguments {
     bot: Client,
     msg: Message,
     args: string[],
     commands: Command[],
-    mc: MinecraftData
+    mc: IMinecraftServerStatus
 }
 
 export default abstract class Command {

@@ -1,0 +1,23 @@
+export enum MinecraftBufferType {
+    Boolean,
+    Byte,
+    UnsignedByte,
+    Short,
+    UnsignedShort,
+    Int,
+    UnsignedInt,
+    Long,
+    Float,
+    Double,
+    String,
+    Chat = String,
+    Identifier = String,
+    VarInt,
+    VarLong,
+    EntityMetadata,
+    Slot,
+    NBTTag,
+    Position,
+    Angle = UnsignedByte,
+    UUID
+}
